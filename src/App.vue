@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <endOfContract />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+<script>
+
+import endOfContract from './components/endOfContract.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    endOfContract
   }
 }
 </script>
