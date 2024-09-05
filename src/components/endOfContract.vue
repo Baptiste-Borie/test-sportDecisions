@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <h1>Liste des Joueurs</h1>
-        <profile-component v-for="player in players" :key="player.id" :player="player"/>
-    </div>
+        <div>
+            <h1>Liste des Joueurs</h1>
+            <div id="wrapperPlayer">
+                <profile-component v-for="player in players" :key="player.id" :player="player"/>
+            </div>
+        </div>
 </template>
 
 <script>
@@ -21,3 +23,13 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+    #wrapperPlayer{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+</style>
