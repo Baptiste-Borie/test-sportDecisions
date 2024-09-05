@@ -1,9 +1,7 @@
 <template>
     <div>
         <h1>Liste des Joueurs</h1>
-            <div v-for="player in players" :key="player.id">
-                <profileComponent :player="player" />
-            </div>
+        <profile-component v-for="player in players" :key="player.id" :player="player"/>
     </div>
 </template>
 
