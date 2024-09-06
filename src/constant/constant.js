@@ -1,0 +1,1 @@
+export const MENU = ["END OF CONTRACTS", "OPTION", "OPTION-VALIDITY"]
