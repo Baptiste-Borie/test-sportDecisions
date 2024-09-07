@@ -1,8 +1,8 @@
 <template>
-    <div id="playerProfile" class="m-1 m-top-2 p-2 d-flex align-items-flex-start text-white">
+    <div id="playerProfile" class="p-2   d-flex align-items-flex-start text-white">
         <img src="../assets/ProfilePicture.png" alt="pictoplayer" class="rounded-circle me-2">
         <div id="info">
-            <h2 class="fw-bold">{{ player.nickname }}</h2>
+            <div id="name">{{ player.nickname }}</div>
             <div >Position : {{ player.position }}</div>
         </div>
         <!-- Three dot icon from bootstrap https://icons.getbootstrap.com/icons/three-dots/ -->
@@ -27,13 +27,13 @@ img{
 }
 
 #playerProfile {
-    display: flex;
     flex-direction: row;
     background-color: #003957;
     align-items: center;
     border-radius: 10px;
     font-size: 10px;
     height: 70px;
+    margin: 15px 0 5px 5px
 }
 
 #playerProfile > svg {
@@ -44,7 +44,7 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding:0px 10px
+    padding-left: 10px
 }
 
 #info > div {
@@ -52,7 +52,10 @@ img{
     justify-content: flex-start;
     color: rgb(200, 198, 198);
 } 
-h2 {
+
+#name {
     font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
 }
 </style>

@@ -7,7 +7,7 @@
       "contract_end": "2026-06-30",
       "option": null,
       "option_validity": null,
-      "contract_end_status": "yellow"
+      "contract_end_status": "orange"
     },
     {
       "id": 25,
@@ -16,7 +16,7 @@
       "contract_end": "2026-06-30",
       "option": "2027-06-30",
       "option_validity": "2026-05-16",
-      "contract_end_status": "yellow"
+      "contract_end_status": "orange"
     },
     {
       "id": 44,
@@ -25,7 +25,7 @@
       "contract_end": "2026-06-30",
       "option": null,
       "option_validity": null,
-      "contract_end_status": "yellow"
+      "contract_end_status": "orange"
     },
     {
       "id": 75,
@@ -52,7 +52,7 @@
       "contract_end": "2026-06-30",
       "option": null,
       "option_validity": null,
-      "contract_end_status": "yellow"
+      "contract_end_status": "orange"
     },
     {
       "id": 79,
