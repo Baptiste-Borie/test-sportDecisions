@@ -1,5 +1,5 @@
 <template>
-  <table class="table">
+  <table class="table table-hover">
     <thead class="table-dark">
       <tr>
         <th class="col-3"></th>
@@ -14,14 +14,12 @@
           <profile-component :player="player" />
         </th>
         <td class="date col-3">
-          <div :style="{color: player.contract_end_status || 'white'}">
+          <div class="dateDiv" :style="{color: player.contract_end_status || 'white'}">
             {{ player.contract_end }}
           </div>
         </td>
         <td class="date col-3">
-          <div>
             {{ player.option }}
-          </div>
         </td>
         <td class="date col-3">
           <div>
@@ -59,10 +57,9 @@
   }
 
   .date {
-    margin-top: 15px;
-    align-items: center;
-    justify-content: center;
     color: white;
+    vertical-align: middle;
+    align-content: center;
   }
   </style>
   

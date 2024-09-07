@@ -5,16 +5,17 @@
             <div id="name">{{ player.nickname }}</div>
             <div >Position : {{ player.position }}</div>
         </div>
-        <!-- Three dot icon from bootstrap https://icons.getbootstrap.com/icons/three-dots/ -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
-        </svg>
+        <threeDot class="threeDot"/>
     </div>
 </template>
 
 <script>
+import threeDot from '../assets/threeDot.vue'
 export default {
     name: "profileComponent",
+    components:{
+        threeDot
+    },
     props: {
         player: Object
     }
@@ -27,24 +28,16 @@ img{
 }
 
 #playerProfile {
-    flex-direction: row;
     background-color: #003957;
     align-items: center;
     border-radius: 10px;
     font-size: 10px;
     height: 70px;
-    margin: 15px 0 5px 5px
+    margin: 15px 0 2px 2px
 }
 
-#playerProfile > svg {
+.threeDot {
     margin-left: auto;
-}
-
-#info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-left: 10px
 }
 
 #info > div {
