@@ -2,29 +2,30 @@
   <table class="table table-hover">
     <thead class="table-dark">
       <tr>
-        <th class="col-3"></th>
-        <th class="col-9" colspan="3" >
-          <header-menu />
+        <th class="col-md-3 col-sm-12"></th>
+        <th class="col-md-9 col-sm-12" colspan="3">
+          <header-menu @change="handleMenuChange" /> <!-- Listen for the change event -->
         </th>
       </tr>
     </thead>
     <tbody class="table-dark">
       <tr v-for="(player, index) in players" :key="'player-' + index">
-        <th scope="row" class="col-3">
+        <th scope="row" class="col-md-3 col-sm-6">
           <profile-component :player="player" />
         </th>
-        <td class="date col-3">
+
+        <!-- Always show this column -->
+        <td class="date col-md-3 col-sm-6" v-if="windowWidth > 768 || currentIndex === 0">
           <div class="dateDiv" :style="{color: player.contract_end_status || 'white'}">
             {{ player.contract_end }}
           </div>
         </td>
-        <td class="date col-3">
-            {{ player.option }}
+
+        <td class="date col-md-3 col-sm-12" v-if="windowWidth > 768 || currentIndex === 1">
+          {{ player.option }}
         </td>
-        <td class="date col-3">
-          <div>
-            {{ player.option_validity }}
-          </div>
+        <td class="date col-md-3 col-sm-12" v-if="windowWidth > 768 || currentIndex === 2">
+          <div> {{ player.option_validity }} </div>
         </td>
       </tr>
     </tbody>
@@ -32,23 +33,36 @@
 </template>
 
 <script>
-  import data from '../store/data.json'
-  import profileComponent from './profileComponent.vue'
-  import headerMenu from './headerMenu.vue'
-  
-  export default {
-    name: "endOfContract",  
-    components: {
-      profileComponent,
-      headerMenu,
-    },
-    data() {
-      return {
-        players: data.players,
-      }
+import data from '../store/data.json'
+import profileComponent from './profileComponent.vue'
+import headerMenu from './headerMenu.vue'
+
+export default {
+  name: "endOfContract",
+  components: {
+    profileComponent,
+    headerMenu,
+  },
+  data() {
+    return {
+      players: data.players,
+      windowWidth: window.innerWidth,
+      currentIndex: 0,
     }
+  },
+  methods: {
+    handleMenuChange(index) {
+      this.currentIndex = index;
+      }
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth
+    });
   }
-  </script>
+}
+</script>
+
   
   <style scoped>
 
@@ -62,4 +76,3 @@
     align-content: center;
   }
   </style>
-  
