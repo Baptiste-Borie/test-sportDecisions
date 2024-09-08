@@ -31,7 +31,7 @@
   </table>
 </template>
 
-  <script>
+<script>
   import data from '../store/data.json'
   import profileComponent from './profileComponent.vue'
   import headerMenu from './headerMenu.vue'
