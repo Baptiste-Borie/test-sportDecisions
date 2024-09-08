@@ -4,7 +4,7 @@
       <tr>
         <th class="col-md-3 col-sm-12"></th>
         <th class="col-md-9 col-sm-12" colspan="3">
-          <header-menu @change="handleMenuChange" /> <!-- Listen for the change event -->
+          <header-menu @change="handleMenuChange" /> 
         </th>
       </tr>
     </thead>
@@ -14,7 +14,6 @@
           <profile-component :player="player" />
         </th>
 
-        <!-- Always show this column -->
         <td class="date col-md-3 col-sm-6" v-if="windowWidth > 768 || currentIndex === 0">
           <div class="dateDiv" :style="{color: player.contract_end_status || 'white'}">
             {{ player.contract_end }}

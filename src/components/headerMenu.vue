@@ -44,13 +44,13 @@ export default{
         prevOption() {
             if (this.currentIndex > 0) {
                 this.currentIndex--;
-                this.$emit('change', this.currentIndex);  // Emit the change
+                this.$emit('change', this.currentIndex);
             }
         },
         nextOption() {
             if (this.currentIndex < this.menuOptions.length - 1) {
                 this.currentIndex++;
-                this.$emit('change', this.currentIndex);  // Emit the change
+                this.$emit('change', this.currentIndex);
             }
         }
     },
