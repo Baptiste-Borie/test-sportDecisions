@@ -11,9 +11,9 @@
 </template>
 
 <script>
-  import { MENU } from '../constant/constant'
-  import  chevronRight from '../assets/chevronRight.vue'
-  import chevronLeft from '../assets/chevronLeft.vue'
+    import { MENU } from '../constant/constant'
+    import  chevronRight from '../assets/chevronRight.vue'
+    import chevronLeft from '../assets/chevronLeft.vue'
 
 export default{
     name: "headerMenu",
