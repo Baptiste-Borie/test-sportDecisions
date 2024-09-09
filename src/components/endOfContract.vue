@@ -74,4 +74,20 @@ export default {
     vertical-align: middle;
     align-content: center;
   }
+
+    table.table-hover{
+      border-bottom:1px dashed #003957;
+      margin-top:20px;
+    }
+  table.table-hover > thead > tr > th{
+      border-bottom: 0;
+  }
+
+  table.table-hover > tbody > tr > th{
+      border-bottom:1px dashed #003957;
+  }
+
+  table.table-hover > tbody > tr > td{
+      border-bottom:1px dashed #003957;
+  }
   </style>
