@@ -27,3 +27,4 @@ Bonus :
 - Les chevrons disparaissent au dessus de 768px
 - Les chevrons disparaissent quand on est au début/à la fin de la liste -> ex : si il n'y a plus d'élément après on ne peut pas scroll à droite.
 - Effet de hover sur les lignes
+- Si on clique sur l'entete "END OF CONTRACT" on change l'ordre de tri des infos

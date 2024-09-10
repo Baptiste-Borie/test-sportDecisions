@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       players: data.players,
-      originalPlayers: [...data.players],
+      originalPlayers: [...data.players], // Copy of players in order to have a "clean" version of it
       windowWidth: window.innerWidth,
       currentIndex: 0,
       sortDirection: null
@@ -62,7 +62,7 @@ export default {
       this.toggleSort(index);
     },
     toggleSort(index) {
-      if (index === 0) { 
+      if (index === 0) {  // Sort is available only on "END OF CONTRACT" column 
         if (this.sortDirection === null) {
           this.sortDirection = 'asc';
           this.players.sort((a, b) => new Date(a.contract_end) - new Date(b.contract_end)); // Sort by ascent order
@@ -87,9 +87,8 @@ export default {
 }
 </script>
 
-  
-  <style scoped>
 
+<style scoped>
   .col {
     border-bottom: 1px dashed #003957;
   }
@@ -100,10 +99,11 @@ export default {
     align-content: center;
   }
 
-    table.table-hover{
+  table.table-hover{
       border-bottom:1px dashed #003957;
       margin-top:20px;
     }
+
   table.table-hover > thead > tr > th{
       border-bottom: 0;
   }
