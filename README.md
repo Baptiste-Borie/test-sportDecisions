@@ -1,22 +1,13 @@
 # test-technique
 
-## Project setup
+### Comment lancer :
 
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-
-```
-npm run build
-```
+cliquer sur le lien après la mise en place du serveur
 
 ### Attention ! : Sur le dépot github il y a 2 contributeurs.
 
