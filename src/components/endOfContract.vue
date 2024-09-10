@@ -62,7 +62,9 @@ export default {
       this.toggleSort(index);
     },
     toggleSort(index) {
-      if (index === 0) {  // Sort is available only on "END OF CONTRACT" column 
+      console.log(index)
+      console.log(this.currentIndex)
+      if (index === 0 && this.currentIndex === 0) {  // Sort is available only on "END OF CONTRACT" column 
         if (this.sortDirection === null) {
           this.sortDirection = 'asc';
           this.players.sort((a, b) => new Date(a.contract_end) - new Date(b.contract_end)); // Sort by ascent order

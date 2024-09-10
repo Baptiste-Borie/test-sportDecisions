@@ -3,7 +3,13 @@
         <button type="button" class="button" @click="prevOption">
             <chevronLeft class="chevron" v-if="currentIndex > 0"/>
         </button>
-        <div class="menuOptions col-col-5" v-for="(option, index) in filteredOptions" :key="index" @click="selectOption(index)">
+        <div 
+            class="menuOptions col-col-5" 
+            v-for="(option, index) in filteredOptions" 
+            :key="index" 
+            @click="selectOption(index)"
+            :class="{ 'endOfContract': index === 0 }"
+            >            
             {{ option }}
             <arrowUpShort v-if="currentIndex === 0 && index === 0 && localSortDirection === 'asc'" />
             <arrowDownShort v-if="currentIndex === 0 && index === 0 && localSortDirection === 'desc'" />
@@ -77,8 +83,11 @@ export default{
             }
         },
         selectOption(index) {
-            this.$emit('change', index); 
-        },
+            console.log(index, this.currentIndex)
+            if (this.currentIndex === 0) {  // Sort is available only on "END OF CONTRACT" column 
+                this.$emit('change', index); 
+                }        
+            },
         updateSortDirection(direction) {
             this.localSortDirection  = direction;
         }
@@ -108,7 +117,10 @@ export default{
         flex: 1;
         padding: 0px 20px 15px; 
         border: 3px solid #64b8e2ac;
-        cursor: pointer;
+    }
+
+    .endOfContract{
+        cursor: pointer ;
     }
 
     @media (min-width: 767px) {
