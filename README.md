@@ -23,7 +23,7 @@ Cela correspond à mes deux comptes github je me suis rendu compte, au milieu du
 ### Mon expérience :
 
 La principale difficulté pour moi dans la réalisation de ce projet était la découverte de Vue.js & Bootstrap.
-J'ai passé suite à notre entretien à survolé la documentation afin de me familiariser avec ce framework et cette librairie. J'ai y découvert 4 choses dont je savais que j'allais me servir : "v-for" & "v-if" qui correspondent à de l'affichage dynamique et conditionnel. "mounted" qui correspond à un hook react nommé "useEffect". Enfin j'ai découvert que bootstrap avait un système de grille très poussé.
+J'ai passé la soirée,suite à notre entretien, à lire la documentation afin de me familiariser avec ce framework et cette librairie. J'ai y découvert 4 choses dont je savais que j'allais me servir : "v-for" & "v-if" qui correspondent à de l'affichage dynamique et conditionnel. "mounted" qui correspond à un hook react nommé "useEffect". Enfin j'ai découvert que bootstrap avait un système de grille très poussé.
 
 Ainsi dès le lendemain, j'ai débuté ce projet. Je n'ai pas rencontré de difficulté particulière durant le projet. Même si je doute d'avoir choisi la méthode la plus simple pour arriver à ce résultat, je suis tout de même heureux du résultat final. J'ai pu réalisé un nombre de bonus honorable, et j'approche grandement du rendu fourni par l'UI/UX designer.
 
