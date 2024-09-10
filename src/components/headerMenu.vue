@@ -1,34 +1,57 @@
 <template>
     <div class="menuWrapper d-flex">
         <button type="button" class="button" @click="prevOption">
-            <chevronLeft class="chevron"/>
+            <chevronLeft class="chevron" v-if="currentIndex > 0"/>
         </button>
-        <div class="menuOptions col-col-5" v-for="(option, index) in filteredOptions" :key="index">{{ option }}</div>
+        <div class="menuOptions col-col-5" v-for="(option, index) in filteredOptions" :key="index" @click="selectOption(index)">
+            {{ option }}
+            <arrowUpShort v-if="currentIndex === 0 && index === 0 && localSortDirection === 'asc'" />
+            <arrowDownShort v-if="currentIndex === 0 && index === 0 && localSortDirection === 'desc'" />
+            <arrowEqual v-if="currentIndex === 0 && index === 0 && !localSortDirection" />
+        </div> 
         <button class="button" @click="nextOption">
-            <chevronRight class="chevron"/>
+            <chevronRight class="chevron" v-if="currentIndex < 2"/>
         </button>
     </div>
 </template>
 
 <script>
     import { MENU } from '../constant/constant'
-    import  chevronRight from '../assets/chevronRight.vue'
-    import chevronLeft from '../assets/chevronLeft.vue'
+    import  chevronRight from '../assets/components/chevron/chevronRight.vue'
+    import chevronLeft from '../assets/components/chevron/chevronLeft.vue'
+    import arrowUpShort from "../assets/components/arrow/arrowUp.vue"
+    import arrowEqual from "../assets/components/arrow/arrowEqual.vue"
+    import arrowDownShort from "../assets/components/arrow/arrowDown.vue"
 
 export default{
     name: "headerMenu",
     components:{
         chevronRight,
-        chevronLeft
+        chevronLeft,
+        arrowUpShort,
+        arrowDownShort,
+        arrowEqual
+        
     },
     props:{
-        option: String
+        option: String ,// Define only if in mobile mode
+        sortDirection: {
+            type: String,
+            default: null
+        }
     },
+
     data() {
         return {
             menuOptions: MENU,
             currentIndex: 0,
             windowWidth: window.innerWidth,
+            localSortDirection: this.sortDirection
+        }
+    },
+    watch: {
+    sortDirection(newVal) {
+        this.localSortDirection = newVal;
         }
     },
     computed: {
@@ -52,6 +75,12 @@ export default{
                 this.currentIndex++;
                 this.$emit('change', this.currentIndex);
             }
+        },
+        selectOption(index) {
+            this.$emit('change', index); 
+        },
+        updateSortDirection(direction) {
+            this.localSortDirection  = direction;
         }
     },
     mounted() {
@@ -77,7 +106,9 @@ export default{
     }
     .menuOptions {
         flex: 1;
+        padding: 0px 20px 15px; 
         border: 3px solid #64b8e2ac;
+        cursor: pointer;
     }
 
     @media (min-width: 767px) {
@@ -90,7 +121,6 @@ export default{
     }
     @media (max-width: 767px) {
         .menuOptions {
-            padding: 0px 20px 15px;
             width: 100%;
         }
     }
