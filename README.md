@@ -24,7 +24,8 @@ Cela correspond à mes deux comptes github je me suis rendu compte, au milieu du
     # Ici on retrouvera tous les composants de notre site web
 
     |constant
-    # Ce fichier n'étais sans doute pas nécessaire, cependant je voulais un code propre. Ici serait donc stockés l'ensemble des constantes.
+    # Ce fichier n'étais sans doute pas nécessaire, cependant je voulais un code propre.
+    # Ici serait donc stockés l'ensemble des constantes.
 
     |store
     # C'est ici que sont stockés les données bruts de l'applications
