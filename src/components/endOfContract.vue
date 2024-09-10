@@ -62,8 +62,6 @@ export default {
       this.toggleSort(index);
     },
     toggleSort(index) {
-      console.log(index)
-      console.log(this.currentIndex)
       if (index === 0 && this.currentIndex === 0) {  // Sort is available only on "END OF CONTRACT" column 
         if (this.sortDirection === null) {
           this.sortDirection = 'asc';
